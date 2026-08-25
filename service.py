@@ -80,6 +80,7 @@ class Handler(BaseHTTPRequestHandler):
 
         length = int(self.headers.get("Content-Length", 0))
         raw = self.rfile.read(length)
+        print(f"[DEBUG] raw data: {raw!r}") 
 
         try:
             payload = json.loads(raw)
