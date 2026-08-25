@@ -140,7 +140,7 @@ class Handler(BaseHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    xvfb_proc = _ensure_display()
+    xvfb_proc = None  # Tidak perlu Xvfb
     server = ThreadedHTTPServer(("0.0.0.0", PORT), Handler)
     print(f"[service] Turnstile solver service running on http://0.0.0.0:{PORT}")
     print(f"[service] worker pool: {MAX_WORKERS} concurrent Chrome instances "
